@@ -37,16 +37,11 @@ client.on("message", (message) => {
     message.channel.send({ embed: embed });
   }
 
-  if (message.content.toLowerCase().startsWith(prefix + `ping`)) {
-    message.channel.send(`Hoold on!`).then(m => {
-    m.edit(`:ping_pong: Wew, made it over the ~waves~ ! **Pong!**\nMessage edit time is ` + (m.createdTimestamp - message.createdTimestamp) + `ms, Discord API heartbeat is ` + Math.round(client.ping) + `ms.`);
-});
-
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
-if (message.content.toLowerCase().startsWith(prefix + `create`)) {
+
+if (message.content.toLowerCase().startsWith(prefix + `if (message.content.toLowerCase().startsWith(prefix + `create`)) {
 if (message.content.toLowerCase().startsWith(prefix + `open`)) {
-if (message.content.toLowerCase().startsWith(prefix + `ticket new`)) {
-if (message.content.toLowerCase().startsWith(prefix + `ticket create`)) {
+if (message.content.toLowerCase().startsWith(prefix + `ticket new`)) {ticket create`)) {
 if (message.content.toLowerCase().startsWith(prefix + `ticket open`)) {
     const reason = message.content.split(" ").slice(1).join(" ");
     if (!message.guild.roles.exists("name", "• The Team")) return message.channel.send(`The server doesn't have a \`• The Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
