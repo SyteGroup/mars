@@ -32,7 +32,7 @@ client.on("message", (message) => {
     .setTitle(`:mailbox_with_mail: ProximDesigns Bot Help`)
     .setColor(0xCF40FA)
     .setDescription(`Hello! I'm the official ProximDesigns Discord bot. I handle tickets, moderation and much more! Here are my commands:`)
-    .addField(`Tickets`, `[${prefix}new]() > Opens up a new ticket and tags the Support Team\n[${prefix}close]() > Closes a ticket that has been resolved or been opened by accident`)
+    .addField(`Tickets`, `[${prefix}new]() > Opens up a new ticket and tags • The Team\n[${prefix}close]() > Closes a ticket that has been resolved or been opened by accident`)
     .addField(`Other`, `[${prefix}help]() > Shows you this help menu that you are reading\n[${prefix}ping]() > Pings the bot to see how long it takes to respond\n[${prefix}about]() > Tells you all about ProximDesigns`)
     message.channel.send({ embed: embed });
   }
@@ -41,6 +41,7 @@ client.on("message", (message) => {
     message.channel.send(`Hoold on!`).then(m => {
     m.edit(`:ping_pong: Wew, made it over the ~waves~ ! **Pong!**\nMessage edit time is ` + (m.createdTimestamp - message.createdTimestamp) + `ms, Discord API heartbeat is ` + Math.round(client.ping) + `ms.`);
   }
+});
 
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
 if (message.content.toLowerCase().startsWith(prefix + `create`)) {
@@ -52,7 +53,7 @@ if (message.content.toLowerCase().startsWith(prefix + `ticket open`)) {
     if (!message.guild.roles.exists("name", "• The Team")) return message.channel.send(`The server doesn't have a \`• The Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
     if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
     message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
-        let role = message.guild.roles.find("name", "Support Team");
+        let role = message.guild.roles.find("name", "• The Team");
         let role2 = message.guild.roles.find("name", "@everyone");
         c.overwritePermissions(role, {
             SEND_MESSAGES: true,
