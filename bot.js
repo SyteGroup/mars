@@ -88,5 +88,7 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
         });
     });
 }
+    
+});
 
 client.login(process.env.BOT_TOKEN);
