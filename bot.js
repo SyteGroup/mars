@@ -6,8 +6,7 @@ function clean(text) {
       return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
     else
         return text;
-});
-
+    
 var prefix = "-";
 
 client.on("ready", () => {
@@ -35,7 +34,7 @@ client.on("message", (message) => {
     .addField(`Tickets`, `[${prefix}new]() > Opens up a new ticket and tags • The Team\n[${prefix}close]() > Closes a ticket that has been resolved or been opened by accident`)
     .addField(`Other`, `[${prefix}help]() > Shows you this help menu that you are reading\n[${prefix}ping]() > Pings the bot to see how long it takes to respond\n[${prefix}about]() > Tells you all about ProximDesigns`)
     message.channel.send({ embed: embed });
-  }
+}
 
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
 if (message.content.toLowerCase().startsWith(prefix + `open`)) {
@@ -68,6 +67,7 @@ if (message.content.toLowerCase().startsWith(prefix + `ticket open`)) {
         c.send({ embed: embed });
     }).catch(console.error);
 }
+    
 if (message.content.toLowerCase().startsWith(prefix + `close`)) {
     if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
 
