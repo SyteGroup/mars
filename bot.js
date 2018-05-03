@@ -87,7 +87,6 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
           }, 3000);
         });
     });
-    
 }
 
 });
