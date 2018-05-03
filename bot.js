@@ -17,7 +17,7 @@ client.on("ready", () => {
   console.log('Prefix: ' + prefix);
   console.log('ID: ' + client.user.id);
   console.log('----------------------');
-  console.log('Channels: ' + client.channels.size');
+  console.log('Channels: ' + client.channels.size);
   console.log('Users: ' + client.users.size);
   console.log('----------------------');
   console.log('https://discordapp.com/oauth2/authorize?client_id=' + client.user.id + '&scope=bot&permissions=8');
