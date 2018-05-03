@@ -34,7 +34,9 @@ client.on("message", (message) => {
     .addField(`Tickets`, `[${prefix}new]() > Opens up a new ticket and tags • The Team\n[${prefix}close]() > Closes a ticket that has been resolved or been opened by accident`)
     .addField(`Other`, `[${prefix}help]() > Shows you this help menu that you are reading\n[${prefix}ping]() > Pings the bot to see how long it takes to respond\n[${prefix}about]() > Tells you all about ProximDesigns`)
     message.channel.send({ embed: embed });
-}
+  }
+    
+});
 
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
 if (message.content.toLowerCase().startsWith(prefix + `open`)) {
@@ -92,4 +94,3 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 });
     
 client.login(process.env.BOT_TOKEN);
-
