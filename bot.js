@@ -11,12 +11,13 @@ function clean(text) {
 var prefix = "-";
 
 client.on("ready", () => {
-  console.log("${client.user.tag} | Logged in! User count: ${client.users.size}");
+  // Console Output.
+  console.log(client.user.username + '#' + client.user.discriminator + ' | Logged in! User count: ${client.users.size}');
   console.log('----------------------');
   console.log('Prefix: ' + prefix);
   console.log('ID: ' + client.user.id);
   console.log('----------------------');
-  console.log('Channels: ' + client.channels.size);
+  console.log('Channels: ' + client.channels.size');
   console.log('Users: ' + client.users.size);
   console.log('----------------------');
   console.log('https://discordapp.com/oauth2/authorize?client_id=' + client.user.id + '&scope=bot&permissions=8');
@@ -40,9 +41,6 @@ client.on("message", (message) => {
 });
 
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
-if (message.content.toLowerCase().startsWith(prefix + `open`)) {
-if (message.content.toLowerCase().startsWith(prefix + `ticket new`)) {
-if (message.content.toLowerCase().startsWith(prefix + `ticket open`)) {
     const reason = message.content.split(" ").slice(1).join(" ");
     if (!message.guild.roles.exists("name", "• The Team")) return message.channel.send(`The server doesn't have a \`• The Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
     if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
