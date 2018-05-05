@@ -22,7 +22,7 @@ client.on("ready", () => {
   console.log('----------------------');
   console.log('https://discordapp.com/oauth2/authorize?client_id=' + client.user.id + '&scope=bot&permissions=8');
   console.log('----------------------');
-  client.user.setPresence({game: {name: `over` + client.users.size + `people | -help`, type: 3}});
+  client.user.setPresence({game: {name: `over ` + client.users.size + ` people | -help`, type: 3}});
 });
 
 client.on("message", (message) => {
